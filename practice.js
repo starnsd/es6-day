@@ -54,7 +54,7 @@ var me = {
 	first: `${first}`
 	,last: `${last}`
 	,lovesDevMountain: true
-	,learnES6: function (){
+	,learnES6(){
 		return "This is awesome!";
 	}
 };
@@ -82,7 +82,7 @@ const destructuring = {
 // using assignment destructuring create two new variables, objects and arrays,
 // with the values taken from the above object
 
-
+const { someName: blah } = library;
 
 
 // do not modify
@@ -104,6 +104,7 @@ const lastFive = [ 6, 7, 8, 9, 10 ];
 // using the spread operator, create a new array named oneThroughTen.
 // You should use the above arrays (and 2 missing digits of your own)
 
+var oneThroughTen = [...firstThree, 4, 5, ...lastFive];
 
 // do not modify
 const jsVersions = [ "es5", "es6", "es2017 onward" ];
@@ -118,34 +119,40 @@ function whatToUse( past, present, future ) {
 // using the spread operator, pass each element of jsVersions as an individual argument to whatToUse
 // and save the return value in a variable named currentJS.
 
-
+var currentJS = whatToUse(...jsVersions);
 
 ///////////////
 /* FUNCTIONS */
 ///////////////
 
 // modify greeter to greet Anonymous if no name is passed.
-function greeter( name ) {
-	return `Hi ${ name }!`
-}
-
+function greeter( name = "Anonymous" ) {
+		return `Hi ${ name }!`
+};
 
 // write a function named toPower that takes two arguments, a number and an exponent,
 // and returns number to the power of exponent.
 // if no exponent is passed, the exponent should be two
 
+function toPower(number, exponent){
+
+};
 
 // using rest parameters, write a function named evenOdd that takes in
 // any number of parameters and returns an object with two properties - even and odd.
 // this function should check each parameter and push it to the appropriate property.
 
+function evenOdd(a, b) {
 
+};
 
 // write a function named multiply that takes in a num parameter and an arbitrary amount of
 // additional numbers. This function should return an array of each additional number
 // multiplied by num.
 
+function multiply(num, a, b, c) {
 
+}
 
 // do not modify
 const bits = [ 2, 4, 8, 16, 32, 64, 128 ];
@@ -159,7 +166,7 @@ const that = {
 	bind: "returns a function definition with the specified context"
 	, call: "invokes a function with the specified context"
 	, apply: "invokes a function with the specified context, passing an array of arguments individually"
-}
+};
 
 // using an arrow function, add a property named arrow that returns the window object
 // do this without using the window keyword. HINT: The default binding of the this keyword
